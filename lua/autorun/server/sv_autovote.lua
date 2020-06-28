@@ -36,6 +36,13 @@ hook.Add( "Initialize", "AutoTTTMapVote", function()
         end )
       end
 
+      if GAMEMODE_NAME == "deception" then
+        hook.Add("SelectRandomMaps", "MAPVOTEDEC_SelectRandomMaps", function()
+          MapVote.Start(nil, nil, nil, nil)
+          return true
+        end)
+      end
+
 end )
 
 
